@@ -10,7 +10,7 @@ namespace _07.Greetings
             string lastName = Console.ReadLine();
             var age = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"Hello, {firstName} {lastName}. Yor are {age} years old.");
+            Console.WriteLine($"Hello, {firstName} {lastName}. You are {age} years old.");
         }
     }
 }
