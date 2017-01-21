@@ -20,7 +20,7 @@ namespace _05.Special_Numbers
 
                 bool specialNumber = (sum == 5) || (sum == 7) || (sum == 11);
 
-                Console.WriteLine("{0} -> {1}", i, specialNumber);
+                Console.WriteLine($"{i} -> {specialNumber}");
             }
         }
     }

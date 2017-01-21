@@ -10,10 +10,12 @@ namespace _08.Refactor_Volume_of_Pyramid
             double leght = double.Parse(Console.ReadLine());
             Console.Write("Width: ");
             double width = double.Parse(Console.ReadLine());
-            Console.Write("Heigth: ");
+            Console.Write("Height: ");
             double height = double.Parse(Console.ReadLine());
-            var pyramidVolume = (leght + width + height) / 3;
-            Console.WriteLine($"Pyramid Volume: {pyramidVolume}");
+
+            double pyramidVolume = (leght * width * height) / 3;
+
+            Console.WriteLine($"Pyramid Volume: {pyramidVolume:f2}");
 
         }
     }
