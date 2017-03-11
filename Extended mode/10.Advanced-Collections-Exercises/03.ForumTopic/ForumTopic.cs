@@ -13,9 +13,10 @@ namespace _03.ForumTopic
 
             while (input != "filter")
             {
-                var tokens = input.Split(' ', '>', '-', ',');
+                var tokens = input.Split(new[] { ' ', '>', '-', ',' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(x => x.Trim()).ToList(); 
                 var name = tokens[0];
-                for (int i = 0; i < tokens.Length - 1; i++)
+                for (int i = 0; i < tokens.Count - 1; i++)
                 {
                     if (!resultDict.ContainsKey(name))
                     {
@@ -28,7 +29,8 @@ namespace _03.ForumTopic
                 input = Console.ReadLine();
             }
 
-            var filtred = Console.ReadLine().Split(' ', ',').ToList();
+            var filtred = Console.ReadLine().Split(new[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(x => x.Trim()).ToList();
 
             foreach (var kvp in resultDict)
             {
@@ -36,7 +38,7 @@ namespace _03.ForumTopic
 
                 if (isAllContained)
                 {
-                    Console.WriteLine($"{kvp.Key} | {string.Join(", #", kvp.Value)}");
+                    Console.WriteLine($"{kvp.Key} | #{string.Join(", #", kvp.Value)}");
                 }
             }
         }
